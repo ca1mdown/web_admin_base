@@ -59,25 +59,26 @@ const router = new VueRouter({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requireAuth)) {
-//     if (store.state.accessToken) {
-//       next()
-//     } else if (sessionStorage.getItem('accessToken')) {
-//       // 一般在已经登录完成的页面中刷新时，就会跳到此处
-//       store.state.accessToken = sessionStorage.getItem('accessToken')
-//       store.action.getBaseData().then(() => {
-//         next()
-//       })
-//     } else {
-//       next({ name: 'Login' })
-//     }
-//   } else if (to.matched.length === 0) {
-//     // first open
-//     next({ name: 'Login' })
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireAuth)) {
+    if (store.state.accessToken) {
+      next()
+    } else if (sessionStorage.getItem('accessToken')) {
+      // 一般在已经登录完成的页面中刷新时，就会跳到此处
+      // store.state.accessToken = sessionStorage.getItem('accessToken')
+      // store.action.getBaseData().then(() => {
+      //   next()
+      // })
+	    next()
+    } else {
+      next({ name: 'Login' })
+    }
+  } else if (to.matched.length === 0) {
+    // first open
+    next({ name: 'Login' })
+  } else {
+    next()
+  }
+})
 
 export default router

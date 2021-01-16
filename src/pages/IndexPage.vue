@@ -12,10 +12,10 @@
               <template slot="title">
                 <span>数据管理</span>
               </template>
-              <el-menu-item index="1-1"><i class="el-icon-office-building"></i>楼盘</el-menu-item>
-              <el-menu-item index="1-2"><i class="el-icon-house"></i>二手房</el-menu-item>
-              <el-menu-item index="1-3"><i class="el-icon-user-solid"></i>名片</el-menu-item>
-              <el-menu-item index="1-4"><i class="el-icon-map-location"></i>区域</el-menu-item>
+              <el-menu-item index="1-1"><i class="el-icon-office-building"></i>轮播图</el-menu-item>
+              <!-- <el-menu-item index="1-2"><i class="el-icon-house"></i>二手房</el-menu-item> -->
+              <!-- <el-menu-item index="1-3"><i class="el-icon-user-solid"></i>名片</el-menu-item> -->
+              <!-- <el-menu-item index="1-4"><i class="el-icon-map-location"></i>区域</el-menu-item> -->
               <!-- <el-menu-item index="1-5"><i class="el-icon-search"></i>搜索关键字</el-menu-item>
               <el-menu-item index="1-6"><i class="el-icon-user"></i>用户行为</el-menu-item>
               <el-menu-item index="1-7"><i class="el-icon-view"></i>预约看房</el-menu-item>

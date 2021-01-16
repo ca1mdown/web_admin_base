@@ -89,18 +89,27 @@ export default {
         return
       }
       this.submitting = true
-      // this.$store.action.login(this.username, this.password).then(() => {
-      //   this.$store.action.getBaseData().then(() => {
-      //     this.$message.success('登录成功')
-      //     this.$router.push({ name: 'Index' })
-      //   })
-      // }, error => {
-      //   this.$message.error(error)
-      //   this.submitting = false
-      //   this.refreshCode()
-      // })
-	      this.$message.success('登录成功')
-	      this.$router.push({ name: 'Index' })
+      this.$store.action.login(this.username, this.password).then(() => {
+          this.$message.success('登录成功')
+		  // console.log("sueess")
+          this.$router.push({ name: 'Index' })
+      }, error => {
+        this.$message.error(error)
+        this.submitting = false
+        this.refreshCode()
+      })
+	  // this.$store.action.login(this.username, this.password).then(() => {
+	  //   this.$store.action.getBaseData().then(() => {
+	  //     this.$message.success('登录成功')
+	  //     this.$router.push({ name: 'Index' })
+	  //   )
+	  // }, error => {
+	  //   this.$message.error(error)
+	  //   this.submitting = false
+	  //   this.refreshCode()
+	  // })
+	      // this.$message.success('登录成功')
+	      // this.$router.push({ name: 'Index' })
     }
   }
 }
